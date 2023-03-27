@@ -1,7 +1,7 @@
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score")
 const highScoreElement = document.querySelector(".high-score")
-const controls = document.querySelector(".controls i")
+const controls = document.querySelectorAll(".controls i")
 
 let gameOver = false;
 let foodX, foodY;
@@ -48,8 +48,9 @@ const changeDirection = (e) => {
 }
 
 controls.forEach(key => {
-    key.addEventListener("click", () => console.log(key))
-});
+        // chamando o método de direção a cada clique e passando a key dataset value como um objeto
+    key.addEventListener("click", () => changeDirection({ key : key.dataset.key }))
+})
 
 const initGame = () => {
     if(gameOver) return handleGameOver();
