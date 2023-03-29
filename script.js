@@ -88,9 +88,10 @@ const initGame = () => {
         //adicionando uma div para cada parte da snakeBody
         htmlMarkup += `<div class="head" style="grid-area: ${snakeBody[i][1]} / ${snakeBody[i][0]} "></div>`;
         // checando se a cabeça da cobra pega no corpo, se pegar gameover vira true
-        if(i !== 0 && snakeBody[0][1] === snakeBody[1][1] && snakeBody[0][0] === snakeBody[i][0]){
-            gameOver = true;
-        }
+        if(i !== 0 && snakeBody[0][1] === snakeBody[i][1] && snakeBody[0][0] === snakeBody[i][0]){
+    gameOver = true;
+}
+
     }
 
     playBoard.innerHTML = htmlMarkup;
